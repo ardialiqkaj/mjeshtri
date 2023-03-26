@@ -10,13 +10,3 @@
 </head>
 
 <body>
-    <header class="flex">
-        <img src="./public/images/Mjeshtri.png" alt="">
-        <nav>
-            <ul>
-                <li>Categories</li>
-                <li>About Us</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
-    </header>
