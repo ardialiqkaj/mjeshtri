@@ -9,11 +9,22 @@
 </head>
 
 <body>
-    <header class="flex justify-between bg-[#9e2a2b] text-white h-12 items-center">
-        <img class="px-4" src="./public/images/mjeshtri-red.png" alt="logo">
+    <header class="flex justify-between bg-[#9e2a2b] text-white h-14 items-center p-4">
+        <?php if (get_header_image()) : ?>
+            <div id="site-header">
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="flex items-center justify-center">
+                    <img class="rounded-full" alt="" src="<?php header_image(); ?>" width="<?php echo absint(get_custom_header()->width); ?>" height="<?php echo absint(get_custom_header()->height); ?>">
+                    <p class="px-2 text-2xl font-bold">MJESHTRI</p>
+                </a>
+            </div>
+        <?php endif; ?>
         <nav>
             <?php
-            wp_nav_menu(array('theme_location'=>'primary'));
+            $args = array(
+                'theme_location' => 'primary',
+                'menu_class' => 'flex'
+            );
+            wp_nav_menu($args);
             ?>
         </nav>
     </header>
